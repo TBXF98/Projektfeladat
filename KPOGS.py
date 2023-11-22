@@ -4,14 +4,14 @@ from tkinter import messagebox, simpledialog
 import random
 import datetime
 
-#név bekérés / Tkinter ablak létrehozása /objektum létrehozása/ eseményhurok elindítása
+
 def main():
     nev = simpledialog.askstring("Név megadása", "Mi a neved?")
     ablak = tk.Tk()
     KPOGS(ablak, nev)
     ablak.mainloop()
 
-#változók létrehozása / metódus meghívása
+
 class KPOGS:
     def __init__(self, root, nev):
         self.root = root
@@ -19,7 +19,7 @@ class KPOGS:
         self.nev = nev
         self.gombfelulet()
 
-#gombok és gombfunkciók létrehozása
+
     def gombfelulet(self):
         for valasztas in ["Kő", "Papír", "Olló", "Gyík", "Spock"]:
             tk.Button(
@@ -29,7 +29,7 @@ class KPOGS:
         magyarazo_gomb = tk.Button(self.root, text="Szabályok",padx=10, pady=10, font=(10), command=self.szabalymenu)
         magyarazo_gomb.pack(padx=10)
 
-#szabály ablak létrehozása
+
     def szabalymenu(self):
         szabalyokablak = tk.Toplevel(self.root)
         szabalyokablak.title("Játékszabályok")
@@ -79,3 +79,4 @@ class KPOGS:
 
 if __name__ == "__main__":
     main()
+
